@@ -172,3 +172,82 @@ body {
     margin: auto auto;
 }
 ```
+
+## BEM (Block Element Modifier)
+- HTML 클래스 속성의 작명법
+요소__일부분 : Underscore 기호로 요소의 일부분을 표시
+요소--상태 : Hyphen 기호로 요소의 상태를 표시 
+
+```html
+<div class="container">
+    <div class="name"></div>
+    <div class="item">
+        <div class="name"></div>
+    </div>
+</div>
+
+<div class="btn primary"></div>
+<div class="btn success"></div>
+<div class="btn error"></div>
+```
+
+1. 위와 같이 작성했을 경우 name에 속성을 부여할 때 다른 name에 원하지 않는 속성이 부여될 가능성이 있다. 따라서 아래와 같이 사용한다. 
+2. 위와 같이 작성했을 때 botton의 상태를 나타내는 것 같은 느낌을 줄 수 없다. 따라서 --를 이용하여 버튼의 상태를 나타낼 때 사용한다.
+
+```html
+<div class="container">
+    <div class="container__name"></div>
+    <div class="item">
+        <div class="item__name"></div>
+    </div>
+</div>
+
+<div class="btn btn--primary"></div>
+<div class="btn btn--success"></div>
+<div class="btn btn--error"></div>
+```
+
+## Lodash
+
+[Lodash](https://lodash.com/)는 다양한 유틸리티 기능을 제공하는 자바스크립트 라이브러리입니다.
+
+[Lodash API](https://lodash.com/docs/4.17.15) <br>
+[Lodash throttle](https://lodash.com/docs/4.17.15#throttle)
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
+```
+
+```js
+window.addEventListener('scroll', _.throttle(function () {
+    // console.log('scroll!')
+}, 300));
+```
+_.throttle(함수, 시간) : 시간 단위로 부하를 줘서 함수가 마구 실행되는 것을 막아준다. (스크롤 이벤트에서 많이 사용함)
+
+
+## GSAP & ScrollToPlugin
+
+[GSAP(The GreenSock Animation Platform)](https://greensock.com/gsap/)은 자바스크립트로 제어하는 타임라인 기반의 애니메이션 라이브러리입니다.
+[ScrollToPlugin](https://greensock.com/scrolltoplugin/)은 스크롤 애니메이션을 지원하는 GSAP 플러그인입니다.
+
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js" integrity="sha512-nTHzMQK7lwWt8nL4KF6DhwLHluv6dVq/hNnj2PBN0xMl2KaMm1PM02csx57mmToPAodHmPsipoERRNn4pG7f+Q==" crossorigin="anonymous"></script>
+```
+
+[.to() 사용법](https://greensock.com/docs/v3/GSAP/gsap.to())
+[GSAP Easing](https://greensock.com/docs/v2/Easing)
+
+```js
+gsap.to(요소, 시간, 옵션)
+// 또는
+TweenMax.to(요소, 시간, 옵션)
+```
+
+```js
+gsap.to(window, .7, {
+  scrollTo: 0
+});
+```
