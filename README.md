@@ -2,7 +2,7 @@
 
 [DEMO](https://superb-cupcake-3946ca.netlify.app/) <br/>
 
-
+![site_image](https://user-images.githubusercontent.com/54899407/234557519-dc4efd7d-fec4-40a7-9ff9-9cdf76e9aa66.PNG)
 
 ## 문자 인코딩(Character Encoding) 설정
 
